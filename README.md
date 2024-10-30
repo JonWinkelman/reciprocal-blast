@@ -13,8 +13,3 @@ BLAST+  <a href="https://www.ncbi.nlm.nih.gov/books/NBK569861/#intro_Installatio
 4) running each best hit from 3) against the genome containing the original query sequence<br>  
 5) building csv for results in 4<br> 
 <br>
-## Building blastp databases:  
-<br>
-1) Get fasta-formatted proteomes and put each fasta file into a proteomes directory<br> 
-2) use the script "make_blastdb_each_proteome.sh" to build blastp database from each proteome<br> 
-<br>
