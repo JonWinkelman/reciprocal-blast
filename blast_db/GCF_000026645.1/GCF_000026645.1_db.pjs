@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "GCF_000026645.1_db",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "./Proteomes//GCF_000026645.1.faa",
+  "number-of-letters": 1954430,
+  "number-of-sequences": 6016,
+  "last-updated": "2024-10-30T15:17:00",
+  "number-of-volumes": 1,
+  "bytes-total": 2980164,
+  "bytes-to-cache": 2008703,
+  "files": [
+    "GCF_000026645.1_db.pdb",
+    "GCF_000026645.1_db.phr",
+    "GCF_000026645.1_db.pin",
+    "GCF_000026645.1_db.pot",
+    "GCF_000026645.1_db.psq",
+    "GCF_000026645.1_db.ptf",
+    "GCF_000026645.1_db.pto"
+  ]
+}

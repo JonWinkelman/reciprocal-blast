@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "GCA_000014625.1_db",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "./Proteomes//GCA_000014625.1.faa",
+  "number-of-letters": 1942728,
+  "number-of-sequences": 5892,
+  "last-updated": "2024-10-30T15:17:00",
+  "number-of-volumes": 1,
+  "bytes-total": 2974640,
+  "bytes-to-cache": 1995885,
+  "files": [
+    "GCA_000014625.1_db.pdb",
+    "GCA_000014625.1_db.phr",
+    "GCA_000014625.1_db.pin",
+    "GCA_000014625.1_db.pot",
+    "GCA_000014625.1_db.psq",
+    "GCA_000014625.1_db.ptf",
+    "GCA_000014625.1_db.pto"
+  ]
+}

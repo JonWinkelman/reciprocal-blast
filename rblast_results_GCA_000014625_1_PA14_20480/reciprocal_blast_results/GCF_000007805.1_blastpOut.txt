@@ -1,0 +1,134 @@
+BLASTP 2.15.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: ./Proteomes/GCA_000014625.1.faa
+           5,892 sequences; 1,942,728 total letters
+
+
+
+Query= WP_011102966.1
+
+Length=661
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+ABJ13915.1 conserved hypothetical protein [Pseudomonas aeruginosa...  71.6    1e-13
+ABJ10707.1 putative chromosome segregation protein [Pseudomonas a...  38.1    0.003
+ABJ14959.1 DNA replication and repair protein RecF [Pseudomonas a...  36.6    0.007
+ABJ10322.1 hypothetical protein PA14_49480 [Pseudomonas aeruginos...  34.7    0.035
+ABJ09866.1 possible ABC transporter protein [Pseudomonas aerugino...  34.3    0.040
+
+
+>ABJ13915.1 conserved hypothetical protein [Pseudomonas aeruginosa 
+UCBPP-PA14]
+Length=807
+
+ Score = 71.6 bits (174),  Expect = 1e-13, Method: Compositional matrix adjust.
+ Identities = 53/179 (30%), Positives = 85/179 (47%), Gaps = 14/179 (8%)
+
+Query  314  DALRIPALTIFALEEPENHLSPYFLARIIRQVRSLTTDGS-------AQAIVTSHSPAVL  366
+            D  R P   +F +EEPE HL        IR V  L  D +        Q ++T+HSP +L
+Sbjct  383  DDKRAPLHLVF-IEEPEAHLHAQIQQVFIRNVLRLLEDANDHATLFHTQLVITTHSPHIL  441
+
+Query  367  SRVNPTEVRYCR-----CDPKTRVSTVKRIKLPVNDVEASKFV-RGAMLAYPELYFARFV  420
+                 + +RY R         T V  +   K   +D  A +F+ R   L + +L+F+  V
+Sbjct  442  YERGFSPIRYFRRVNDQLGHHTDVRNLSLFKTGASDAPAREFLQRYLKLTHCDLFFSDAV  501
+
+Query  421  LLVEGDSERIVLPRLAEALNLLIDPAFVAIVPLGGRHVQHFWRLLKHLGIPHATLLDLD  479
+            +LVEG+ ER++LP + E +   +  + + I+ +GG     F  L+  +G+    + DLD
+Sbjct  502  ILVEGNVERLLLPAMIELVAKRLRSSALTILEVGGAFAHRFQELIAFVGLTTLVITDLD  560
+
+
+>ABJ10707.1 putative chromosome segregation protein [Pseudomonas 
+aeruginosa UCBPP-PA14]
+Length=1162
+
+ Score = 38.1 bits (87),  Expect = 0.003, Method: Compositional matrix adjust.
+ Identities = 17/55 (31%), Positives = 31/55 (56%), Gaps = 1/55 (2%)
+
+Query  1   MLIESAVLSGFRCFAPRPISVTISPKITTIVGPNAAGKTALLHALAKLFGVTRAQ  55
+           M ++S  L+GF+ F   P +V     +  +VGPN  GK+ ++ A+  + G + A+
+Sbjct  1   MRLKSIKLAGFKSFVD-PTTVNFPSNMAAVVGPNGCGKSNIIDAVRWVMGESSAK  54
+
+
+>ABJ14959.1 DNA replication and repair protein RecF [Pseudomonas 
+aeruginosa UCBPP-PA14]
+Length=369
+
+ Score = 36.6 bits (83),  Expect = 0.007, Method: Compositional matrix adjust.
+ Identities = 16/42 (38%), Positives = 29/42 (69%), Gaps = 1/42 (2%)
+
+Query  18  PISVTISPKITTIVGPNAAGKTALLHALAKLFGVTRAQRTVR  59
+           P++++ SP+I  + G N +GKT++L A+  L G+ R+ R+ R
+Sbjct  16  PVTLSPSPRINILYGDNGSGKTSVLEAI-HLLGLARSFRSAR  56
+
+
+>ABJ10322.1 hypothetical protein PA14_49480 [Pseudomonas aeruginosa 
+UCBPP-PA14]
+Length=595
+
+ Score = 34.7 bits (78),  Expect = 0.035, Method: Compositional matrix adjust.
+ Identities = 18/46 (39%), Positives = 24/46 (52%), Gaps = 2/46 (4%)
+
+Query  1   MLIESAVLSGFRCFAPRPISVTISPKITTIVGPNAAGKTALLHALA  46
+           M I    L  F+ +  + IS  I P ++   GPN AGKT +L A A
+Sbjct  1   MQITKLTLHRFKKYRDKEIS--IKPGLSLFAGPNNAGKTTILQAFA  44
+
+
+ Score = 32.0 bits (71),  Expect = 0.19, Method: Compositional matrix adjust.
+ Identities = 16/55 (29%), Positives = 26/55 (47%), Gaps = 1/55 (2%)
+
+Query  319  PALTIFALEEPENHLSPYFLARIIRQVRSLTTDGSAQAIVTSHSPAVLSRVNPTE  373
+            P   +  L+EP+ HL       IIRQ+  +      Q    +HSP ++ + +P E
+Sbjct  297  PETDLILLDEPDAHLHSTLQHEIIRQLEKVAEKAGKQIFFCTHSPELI-KAHPAE  350
+
+
+>ABJ09866.1 possible ABC transporter protein [Pseudomonas aeruginosa 
+UCBPP-PA14]
+Length=585
+
+ Score = 34.3 bits (77),  Expect = 0.040, Method: Compositional matrix adjust.
+ Identities = 15/33 (45%), Positives = 22/33 (67%), Gaps = 1/33 (3%)
+
+Query  17   RPISVTISP-KITTIVGPNAAGKTALLHALAKL  48
+            R +S  + P  +T +VGP+ AGK+ LLH LA+ 
+Sbjct  363  RDVSFVVPPGSVTAVVGPSGAGKSTLLHLLARF  395
+
+
+
+Lambda      K        H        a         alpha
+   0.320    0.135    0.398    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 792230496
+
+
+  Database: ./Proteomes/GCA_000014625.1.faa
+    Posted date:  Oct 30, 2024  3:17 PM
+  Number of letters in database: 1,942,728
+  Number of sequences in database:  5,892
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40

@@ -1,0 +1,118 @@
+BLASTP 2.15.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: ./Proteomes//GCF_000007805.1.faa
+           5,418 sequences; 1,795,042 total letters
+
+
+
+Query= GCA_000014625_1_PA14_20480
+
+Length=92
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+WP_011102966.1 AAA family ATPase [Pseudomonas syringae group geno...  25.4    1.1  
+WP_005763563.1 MULTISPECIES: fructose-bisphosphate aldolase class...  24.6    1.6  
+WP_011104047.1 MULTISPECIES: ubiquinone-dependent pyruvate dehydr...  23.5    3.7  
+WP_046463327.1 MULTISPECIES: alpha/beta fold hydrolase [Pseudomon...  23.1    6.0  
+WP_005763807.1 MULTISPECIES: NAD(P)/FAD-dependent oxidoreductase ...  23.1    6.1  
+
+
+>WP_011102966.1 AAA family ATPase [Pseudomonas syringae group 
+genomosp. 3]
+Length=661
+
+ Score = 25.4 bits (54),  Expect = 1.1, Method: Compositional matrix adjust.
+ Identities = 10/29 (34%), Positives = 21/29 (72%), Gaps = 1/29 (3%)
+
+Query  40   PVVLDSNATPQ-WAPAAQRLVIQAPEESP  67
+            P ++D  ATP+  AP+ + ++I+ P+++P
+Sbjct  88   PELIDGTATPETIAPSFRHMLIERPDDAP  116
+
+
+>WP_005763563.1 MULTISPECIES: fructose-bisphosphate aldolase class 
+II [Pseudomonas syringae group]
+Length=354
+
+ Score = 24.6 bits (52),  Expect = 1.6, Method: Composition-based stats.
+ Identities = 14/46 (30%), Positives = 25/46 (54%), Gaps = 3/46 (7%)
+
+Query  38  EKPVVLDSNATPQ---WAPAAQRLVIQAPEESPRIVTVGEDERGTA  80
+           + PV++ ++A  +    AP  + L++ A EE P I  V   + GT+
+Sbjct  42  DSPVIVQASAGARKYAGAPFLRHLILAAIEEFPHIPVVMHQDHGTS  87
+
+
+>WP_011104047.1 MULTISPECIES: ubiquinone-dependent pyruvate dehydrogenase 
+[Pseudomonas syringae group]
+Length=572
+
+ Score = 23.5 bits (49),  Expect = 3.7, Method: Compositional matrix adjust.
+ Identities = 12/33 (36%), Positives = 18/33 (55%), Gaps = 0/33 (0%)
+
+Query  16   LALVVFQNSALGDEDRTQERNGEKPVVLDSNAT  48
+            + +VVF NS+LG  D   + +G  P   D + T
+Sbjct  454  IKMVVFNNSSLGFVDMEMKASGYVPHGTDLHET  486
+
+
+>WP_046463327.1 MULTISPECIES: alpha/beta fold hydrolase [Pseudomonas 
+syringae group]
+Length=363
+
+ Score = 23.1 bits (48),  Expect = 6.0, Method: Compositional matrix adjust.
+ Identities = 10/24 (42%), Positives = 16/24 (67%), Gaps = 1/24 (4%)
+
+Query  20   VFQNSALGDEDRTQERNGEKPVVL  43
+             +++SAL  +DR  +R  EKPV +
+Sbjct  202  FYRSSALA-QDRLHQRRYEKPVFI  224
+
+
+>WP_005763807.1 MULTISPECIES: NAD(P)/FAD-dependent oxidoreductase 
+[Pseudomonas syringae group]
+Length=559
+
+ Score = 23.1 bits (48),  Expect = 6.1, Method: Composition-based stats.
+ Identities = 14/48 (29%), Positives = 24/48 (50%), Gaps = 10/48 (21%)
+
+Query  7   LVGTGLLSLLAL----------VVFQNSALGDEDRTQERNGEKPVVLD  44
+           ++G G+  L+A           VV++ S +G   R+QE  G K +V +
+Sbjct  49  IIGAGIAGLVAAYELMKMGLKPVVYEASKMGGRLRSQEFEGAKGIVAE  96
+
+
+
+Lambda      K        H        a         alpha
+   0.311    0.127    0.356    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 45400864
+
+
+  Database: ./Proteomes//GCF_000007805.1.faa
+    Posted date:  Oct 30, 2024  3:17 PM
+  Number of letters in database: 1,795,042
+  Number of sequences in database:  5,418
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40

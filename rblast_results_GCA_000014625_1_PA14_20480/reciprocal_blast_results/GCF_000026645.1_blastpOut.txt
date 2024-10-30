@@ -1,0 +1,120 @@
+BLASTP 2.15.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: ./Proteomes/GCA_000014625.1.faa
+           5,892 sequences; 1,942,728 total letters
+
+
+
+Query= WP_003113127.1
+
+Length=92
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+ABJ12623.1 hypothetical protein PA14_20480 [Pseudomonas aeruginos...  179     1e-61
+ABJ13460.1 putative transcriptional regulator [Pseudomonas aerugi...  26.2    0.53 
+ABJ14155.1 putative ferredoxin [Pseudomonas aeruginosa UCBPP-PA14]    26.2    0.55 
+ABJ13552.1 putative exonuclease [Pseudomonas aeruginosa UCBPP-PA14]   25.0    1.4  
+ABJ15518.1 fructose-1,6-bisphosphate aldolase [Pseudomonas aerugi...  23.1    5.3  
+
+
+>ABJ12623.1 hypothetical protein PA14_20480 [Pseudomonas aeruginosa 
+UCBPP-PA14]
+Length=92
+
+ Score = 179 bits (455),  Expect = 1e-61, Method: Compositional matrix adjust.
+ Identities = 89/92 (97%), Positives = 92/92 (100%), Gaps = 0/92 (0%)
+
+Query  1   MSSSRNLVGTGLLSLLALVVFQNSALGDEDRTQERNGERPVVLDSNATPQWAPAAQQLVI  60
+           MSSSRNLVGTGLLSLLALVVFQNSALGDEDRTQERNGE+PVVLDSNATPQWAPAAQ+LVI
+Sbjct  1   MSSSRNLVGTGLLSLLALVVFQNSALGDEDRTQERNGEKPVVLDSNATPQWAPAAQRLVI  60
+
+Query  61  QAPDESPRIVTVGEDERGTALVTAADEQAWTF  92
+           QAP+ESPRIVTVGEDERGTALVTAADEQAWTF
+Sbjct  61  QAPEESPRIVTVGEDERGTALVTAADEQAWTF  92
+
+
+>ABJ13460.1 putative transcriptional regulator [Pseudomonas aeruginosa 
+UCBPP-PA14]
+Length=212
+
+ Score = 26.2 bits (56),  Expect = 0.53, Method: Compositional matrix adjust.
+ Identities = 16/53 (30%), Positives = 28/53 (53%), Gaps = 10/53 (19%)
+
+Query  35   RNGERPVVL----DSNATPQWAPAAQQLVIQAPDESPRIVT------VGEDER  77
+            R+G+  +V+    D+  +PQW P+ Q+   Q P  + R+V       + +DER
+Sbjct  69   RDGDEVLVVFRAGDAYISPQWYPSKQEHHRQVPTWNYRVVHAHGRVRIRDDER  121
+
+
+>ABJ14155.1 putative ferredoxin [Pseudomonas aeruginosa UCBPP-PA14]
+Length=938
+
+ Score = 26.2 bits (56),  Expect = 0.55, Method: Compositional matrix adjust.
+ Identities = 14/31 (45%), Positives = 16/31 (52%), Gaps = 6/31 (19%)
+
+Query  48   TPQWAPAAQQLVIQAP------DESPRIVTV  72
+             PQW PA  Q V  AP      DE PR+V +
+Sbjct  676  VPQWTPALPQPVRLAPPPAPLDDERPRVVYL  706
+
+
+>ABJ13552.1 putative exonuclease [Pseudomonas aeruginosa UCBPP-PA14]
+Length=1211
+
+ Score = 25.0 bits (53),  Expect = 1.4, Method: Compositional matrix adjust.
+ Identities = 11/28 (39%), Positives = 15/28 (54%), Gaps = 0/28 (0%)
+
+Query  6    NLVGTGLLSLLALVVFQNSALGDEDRTQ  33
+             L  TGL S L+   +Q ++  DE R Q
+Sbjct  191  KLTDTGLYSQLSKAAYQRASQADEQRKQ  218
+
+
+>ABJ15518.1 fructose-1,6-bisphosphate aldolase [Pseudomonas aeruginosa 
+UCBPP-PA14]
+Length=354
+
+ Score = 23.1 bits (48),  Expect = 5.3, Method: Composition-based stats.
+ Identities = 13/46 (28%), Positives = 25/46 (54%), Gaps = 3/46 (7%)
+
+Query  38  ERPVVLDSNATPQ---WAPAAQQLVIQAPDESPRIVTVGEDERGTA  80
+           + PV++ ++A  +    AP  + L++ A +E P I  V   + GT+
+Sbjct  42  DSPVIVQASAGARKYAGAPFLRHLILAAIEEFPHIPVVMHQDHGTS  87
+
+
+
+Lambda      K        H        a         alpha
+   0.312    0.127    0.358    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 49082796
+
+
+  Database: ./Proteomes/GCA_000014625.1.faa
+    Posted date:  Oct 30, 2024  3:17 PM
+  Number of letters in database: 1,942,728
+  Number of sequences in database:  5,892
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40
