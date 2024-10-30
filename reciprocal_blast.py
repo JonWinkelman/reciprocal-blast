@@ -4,7 +4,6 @@ from jw_utils import parse_fasta as pfa
 from jw_utils import file_utils as fu
 import os
 import subprocess
-import numpy as np
 import pandas as pd
 
 

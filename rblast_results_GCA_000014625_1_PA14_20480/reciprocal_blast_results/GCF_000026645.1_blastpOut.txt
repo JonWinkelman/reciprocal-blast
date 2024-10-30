@@ -108,7 +108,7 @@ Effective search space used: 49082796
 
 
   Database: ./Proteomes/GCA_000014625.1.faa
-    Posted date:  Oct 30, 2024  3:17 PM
+    Posted date:  Oct 30, 2024  4:01 PM
   Number of letters in database: 1,942,728
   Number of sequences in database:  5,892
 

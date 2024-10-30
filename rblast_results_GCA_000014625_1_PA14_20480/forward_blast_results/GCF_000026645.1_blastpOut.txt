@@ -112,7 +112,7 @@ Effective search space used: 49211074
 
 
   Database: ./Proteomes//GCF_000026645.1.faa
-    Posted date:  Oct 30, 2024  3:17 PM
+    Posted date:  Oct 30, 2024  4:01 PM
   Number of letters in database: 1,954,430
   Number of sequences in database:  6,016
 
