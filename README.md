@@ -3,6 +3,8 @@
 <img src="images/reciprocal_blast.png" alt="reciprocal blast">
 
 dependencies:<br>
+python3
+`pandas` `Bio` `plotly`<br> 
 BLAST+  <a href="https://www.ncbi.nlm.nih.gov/books/NBK569861/#intro_Installation.MacOSX">Install</a>
 <br>
 <a href="https://www.ncbi.nlm.nih.gov/books/NBK279691/">BLAST+ user manual</a>
