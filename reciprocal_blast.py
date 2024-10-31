@@ -1,14 +1,31 @@
 #!/usr/bin/env python
-
+import os
 from jw_utils import parse_fasta as pfa
 from jw_utils import file_utils as fu
-import os
 import subprocess
 import pandas as pd
+from pathlib import Path
 
 
+def full_rblast(proteome_dir, query_file,query_protein_name, 
+                reference_proteome_path, blast_db_name=None, 
+                proteomes_to_include=None, suffix='.faa'):
+    if not blast_db_name:
+        blast_db_name = './blast_db'
+    rblast_results_dir = './rblast_results_' + Path(query_file).stem
+    make_blastp_databases(proteome_dir, blast_db_name, proteomes_to_include)
+    reciprocal_blastp(blast_db_name, 
+                     query_file,
+                     rblast_results_dir,
+                     proteome_dir, 
+                     reference_proteome_path,
+                     proteomes_to_include,
+                     suffix
+                    )
+    return get_full_best_hits_dict(rblast_results_dir, query_protein_name, accession_length=15)
 
-def reciprocal_blastp(database_dir, query_file, out_dirname, proteome_dir, reference_proteome_path, accessions_to_include):
+
+def reciprocal_blastp(database_dir, query_file, out_dirname, proteome_dir, reference_proteome_path, accessions_to_include, suffix='.faa'):
     """
     
     parameters:
@@ -24,7 +41,9 @@ def reciprocal_blastp(database_dir, query_file, out_dirname, proteome_dir, refer
     
     databases  = [db for db in os.listdir(database_dir) if db != '.DS_Store']
     if not accessions_to_include:
-        proteomes = [p.replace('.faa', '') for p in os.listdir(proteome_dir)]
+        proteomes = [Path(p).stem for p in os.listdir(proteome_dir) if p.endswith(suffix)]
+        if len(proteomes) == 0: 
+            print(f'no proteomes with suffix {suffix} were found.')
     else:
         proteomes = accessions_to_include
     for proteome in proteomes:
@@ -78,7 +97,7 @@ def create_blast_database(proteome_path, out_fp, dbtype='prot'):
 def make_blastp_databases(proteome_dir, out_dir, proteomes_to_include=None, dbtype='prot', proteome_suffix='.faa'):
     """Create a BLASTP database for each proteome within a directory."""
     if not proteomes_to_include:
-        proteomes_to_include = [acc.replace(proteome_suffix).strip('.') for acc in os.listdir(proteome_dir)]
+        proteomes_to_include = [Path(proteome).stem for proteome in os.listdir(proteome_dir)]
 
     for acc in proteomes_to_include:
         proteome_path = f'{proteome_dir}/{acc}.faa'
