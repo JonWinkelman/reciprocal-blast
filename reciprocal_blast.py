@@ -10,6 +10,22 @@ from pathlib import Path
 def full_rblast(proteome_dir, query_file,query_protein_name, 
                 reference_proteome_path, blast_db_name=None, 
                 proteomes_to_include=None, suffix='.faa'):
+    """
+    Perform a full reciprocal BLASTp search for orthologous gene detection.
+
+    Args:
+        proteome_dir (str): Directory containing individual proteome files.
+        query_file (str): Path to the initial query file.
+        query_protein_name (str): Name of the query protein.
+        reference_proteome_path (str): Path to the reference proteome file.
+        blast_db_name (str, optional): Directory to store BLAST databases.
+        proteomes_to_include (list, optional): Subset of proteomes to use.
+        suffix (str): File extension of proteomes.
+
+    Returns:
+        DataFrame: Summary of best hits across proteomes.
+    """
+    
     if not blast_db_name:
         blast_db_name = './blast_db'
     rblast_results_dir = './rblast_results_' + Path(query_file).stem
@@ -27,16 +43,19 @@ def full_rblast(proteome_dir, query_file,query_protein_name,
 
 def reciprocal_blastp(database_dir, query_file, out_dirname, proteome_dir, reference_proteome_path, accessions_to_include, suffix='.faa'):
     """
-    
-    parameters:
-    database_dir (str): Path to the parent directory holding all of the individual database folders.
-    query_file (str): Path to fasta initial forward query file from reference_proteome 
-    out_dirname (str): Desired name of the folder holding all results from the different steps of recip. blastp. 
-    proteome_dir (str): Path to the directory holding the indivual proteomes (and nothing else). 
-    reference_proteome_path (str): Path to the proteome of the orginism from which the original forward query was derived. 
-    accessions_to_include (list or other iterable): for querying only subset of the proteomes. Otherwise, all proteomes
-                    present in './Proteomes' will be queried. 
-    
+    Perform forward and reciprocal BLAST searches.
+
+    Args:
+        database_dir (str): Directory with individual BLAST databases.
+        query_file (str): Path to initial query file.
+        out_dirname (str): Directory to store BLAST results.
+        proteome_dir (str): Directory containing individual proteome files.
+        reference_proteome_path (str): Path to reference proteome.
+        accessions_to_include (list): Subset of proteomes to query.
+        suffix (str): Proteome file suffix.
+
+    Raises:
+        Exception: If a proteome in 'proteomes_to_include' or 'databases' is missing.
     """
     
     databases  = [db for db in os.listdir(database_dir) if db != '.DS_Store']
@@ -73,12 +92,12 @@ def reciprocal_blastp(database_dir, query_file, out_dirname, proteome_dir, refer
 
 def create_blast_database(proteome_path, out_fp, dbtype='prot'):
     """
-    Create a BLAST database from a reference proteome with the specified database type.
+    Create a BLAST database from a reference proteome.
 
     Args:
-        reference_proteome_path (str): Path to the reference proteome (.faa file).
-        reference_db_path (str): Output path for the BLAST database.
-        dbtype (str): Type of database to create ('prot' for protein, 'nucl' for nucleotide).
+        proteome_path (str): Path to reference proteome file.
+        out_fp (str): Output path for the BLAST database.
+        dbtype (str): Type of database ('prot' or 'nucl').
     """
     try:
         # Run the makeblastdb command using subprocess
@@ -95,7 +114,17 @@ def create_blast_database(proteome_path, out_fp, dbtype='prot'):
 
 
 def make_blastp_databases(proteome_dir, out_dir, proteomes_to_include=None, dbtype='prot', proteome_suffix='.faa'):
-    """Create a BLASTP database for each proteome within a directory."""
+    """
+    Create BLASTP databases for each proteome in a directory.
+
+    Args:
+        proteome_dir (str): Directory with individual proteome files.
+        out_dir (str): Directory to store created databases.
+        proteomes_to_include (list, optional): Subset of proteomes to include.
+        dbtype (str): Database type ('prot' or 'nucl').
+        proteome_suffix (str): File extension of proteomes.
+    """
+    
     if not proteomes_to_include:
         proteomes_to_include = [Path(proteome).stem for proteome in os.listdir(proteome_dir)]
 
@@ -115,7 +144,15 @@ def make_blastp_databases(proteome_dir, out_dir, proteomes_to_include=None, dbty
 
 
 def multi_database_query(database_dir, query_filepath, out_dir_path=None):
-    """Query each BLASTP database and save hits in the output directory."""
+    """
+    Query each BLASTP database and store hits in the output directory.
+
+    Args:
+        database_dir (str): Directory containing individual BLAST databases.
+        query_filepath (str): Path to query file.
+        out_dir_path (str): Directory to store query results.
+    """
+    
     if not out_dir_path:
         out_dir_path = './forward_blast_results'
     os.makedirs(out_dir_path, exist_ok=True)
@@ -133,7 +170,15 @@ def multi_database_query(database_dir, query_filepath, out_dir_path=None):
 
 
 def recip_blast(rblast_queries_dir, rblast_db_path, out_dir):
-    """Perform reciprocal BLAST queries for multiple queries against a given database."""
+    """
+    Perform reciprocal BLAST searches for queries against a reference database.
+
+    Args:
+        rblast_queries_dir (str): Directory with queries for reciprocal BLAST.
+        rblast_db_path (str): Path to reference BLAST database.
+        out_dir (str): Directory to store reciprocal BLAST results.
+    """
+    
     os.makedirs(out_dir, exist_ok=True)
 
     query_files = [file for file in os.listdir(rblast_queries_dir) if file.endswith('.faa')]
@@ -154,14 +199,18 @@ def recip_blast(rblast_queries_dir, rblast_db_path, out_dir):
 
 
 def write_best_hit_queries(proteome_dir, bbhits, query_dir=None):
-    """Write each best hit to its own fasta file
-    parameters:
-    proteome_dir (str): path to the proteome directory
-    path_to_blastpOut (str): path to directory contianin output from initial blast
-    query_dir (str): path to dir that you want to create to store the created fasta files
-
-    return (dict, nested): { assembly_accession:{protein_id:sequence} }
     """
+    Write each best hit to a separate FASTA file.
+
+    Args:
+        proteome_dir (str): Path to proteome directory.
+        bbhits (str): Directory with BLAST output files.
+        query_dir (str, optional): Directory to store output FASTA files.
+
+    Returns:
+        dict: Nested dictionary of best hit sequences {accession: {protein_id: sequence}}.
+    """
+    
     best_hit_dict_tot = get_sequence(proteome_dir, bbhits)
     if not query_dir:
         query_dir = './query_fasta_files'
